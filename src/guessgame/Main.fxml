@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<BorderPane fx:controller="guessgame.MainController" maxHeight="400.0" maxWidth="602.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+
+    <!--<TextField fx:id="plum" />-->
+    <!--<Label text="${'Hello, ' + plum.text + '!'}" />-->
+    <top>
+        <HBox>
+            <Spinner fx:id="num1" initialValue="5" max="9" min="0" prefWidth="70"/>
+            <Spinner fx:id="num2" initialValue="5" max="9" min="0" prefWidth="70"/>
+            <Spinner fx:id="num3" initialValue="5" max="9" min="0" prefWidth="70"/>
+            <Spinner fx:id="num4" initialValue="5" max="9" min="0" prefWidth="70"/>
+            <Button text="Go!" onAction="#go"/>
+        </HBox>
+    </top>
+    <center>
+        <TableView fx:id="strawb">
+            <columns>
+                <TableColumn text="turn #">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="turnNr"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Guess">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="guess"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Bulls">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="bulls"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Cows">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="cows"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+            </columns>
+        </TableView>
+    </center>
+
+</BorderPane>
